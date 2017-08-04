@@ -4,11 +4,13 @@
 # @Author  : C.C
 # @File    : ship.py
 import pygame
+from pygame.sprite import Sprite
 
 
-class Ship():
+class Ship(Sprite):
     def __init__(self, settings, screen):
         '''初始化飞机'''
+        super(Ship, self).__init__()
         self.screen = screen
         self.settings = settings
 

@@ -6,6 +6,7 @@
 
 class GameStart():
     '''跟踪游戏的统计信息'''
+
     def __init__(self, settings):
         '''初始化统计信息'''
         self.settings = settings
@@ -14,6 +15,11 @@ class GameStart():
         '''游戏刚启动的时候处于活动状态'''
         self.game_active = True
 
+        # 在任何情况下不能充值最高分
+        self.high_score = 0
+
     def reset_start(self):
         '''初始化在游戏期间可能变化的统计信息'''
         self.ships_left = self.settings.ship_limit
+        self.score = 0
+        self.level = 1
